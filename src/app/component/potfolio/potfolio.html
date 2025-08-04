@@ -1,0 +1,21 @@
+@for(item of names ; track $index){
+<span>{{item}}</span>
+}
+@empty {
+<p class="bg-danger">No names available.</p>
+}
+
+<h2>Contact Information</h2>
+@for(item of contactsinfo ; track $index){
+    <div>
+        <span>name: {{item.myname}} - age: {{item.age}}</span>
+    </div>
+}
+@for(item of contactsinfo ; track $index){
+<p>{{$index}}</p>
+<p>{{$count}}</p>
+<p>{{$first}}</p>
+<p>{{$last}}</p>
+<p>{{$even}}</p>
+<p>{{$odd}}</p>
+}

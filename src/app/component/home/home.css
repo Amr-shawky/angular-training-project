@@ -1,0 +1,9 @@
+button[data-status="old"] {
+  background-color: darkred;
+  color: white;
+}
+
+button[data-status="young"] {
+  background-color: darkgreen;
+  color: white;
+}

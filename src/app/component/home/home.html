@@ -1,0 +1,44 @@
+<p>home works!</p>
+
+<h1 [style.font-size]="'64px'" [class]="{'text-center': true , 'bg-success':true}">binding types</h1>
+
+<fa-icon [icon]="faCoffee"></fa-icon>
+<!-- ! binding types -->
+
+<!-- * interpolation -->
+<div class="container">
+    <div class="row">
+        <h1>hello , iam {{name}} and my age is {{age}}</h1>
+    </div>
+</div>
+
+<!-- * property type -->
+
+<img [src]="imgpath" style="width: 400px;">
+
+<!-- * event binding -->
+ <button (click)="print()" class="btn btn-primary d-block p-5">++ age</button>
+
+ <!-- * attribute binding -->
+
+ <button [attr.myattr]="age > 30" class="btn btn-danger d-block p-5">age is greater than 30</button>
+ <button 
+  [attr.title]="'Your age is ' + age"
+  [attr.data-status]="age > 30 ? 'old' : 'young'"
+  class="btn btn-info">
+  Check Status
+</button>
+
+
+<!-- * class binding -->
+<h1 [class.text-center]="bool">test header</h1>
+<h2 [class]="{'text-center':bool , 'text-danger': bool , 'text-success': !bool , 'bg-danger': !bool , 'bg-success': bool}">test header 2</h2>
+
+<!-- * style binding -->
+
+<h1 [style.color]="'red'">style binding</h1>
+
+<h1 [style]="{'color':'red' , 'background-color':'blue'}">style binding</h1>
+
+
+

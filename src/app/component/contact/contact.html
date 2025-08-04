@@ -1,0 +1,25 @@
+<p>contact works!</p>
+<!-- * @if(myinfo.age<30){
+  <p>Age is less than 30</p>
+}
+*@else {
+  <p>Age is 30 or more</p>
+}
+
+*@switch (myinfo.age) {
+ *   @case (20) {
+          <p>Age is 20</p>
+    }
+   * @case(30){
+          <p>Age is 30</p>
+    }
+   * @default {
+                  <p>Age is more than 30</p>
+    }
+} -->
+
+<!-- two way data binding -->
+
+<input class="form-control" [(ngModel)]="name">
+
+<h1>my name is {{name}}</h1>
