@@ -1,0 +1,22 @@
+<div class="setting-container">
+  <h2><fa-icon [icon]="['fas', 'gear']"></fa-icon> Settings</h2>
+
+  <div class="setting-item">
+    <label for="language"><fa-icon [icon]="['fas', 'globe']"></fa-icon> Language</label>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+      <option value="fr">Français</option>
+    </select>
+  </div>
+
+  <div class="setting-item">
+    <label for="notifications"><fa-icon [icon]="['fas', 'bell']"></fa-icon> Notifications</label>
+    <input type="checkbox" id="notifications" />
+  </div>
+
+  <div class="setting-item">
+    <label for="darkMode"><fa-icon [icon]="['fas', 'moon']"></fa-icon> Dark Mode</label>
+    <input type="checkbox" id="darkMode" />
+  </div>
+</div>

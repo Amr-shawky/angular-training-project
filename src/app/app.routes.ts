@@ -4,6 +4,10 @@ import { Home } from './component/home/home';
 import { Contact } from './component/contact/contact';
 import { Notfound } from './component/notfound/notfound';
 import { Settings } from './component/settings/settings';
+import { Changepassword } from './component/changepassword/changepassword';
+import { Profile } from './component/profile/profile';
+import { Setting } from './component/setting/setting';
+
 
 
 export const routes: Routes = [
@@ -11,6 +15,11 @@ export const routes: Routes = [
     {path:'home', component: Home,title: 'home'},
     {path:'contact', component: Contact,title: 'contact'},
     {path:'portfolio', component: Potfolio,title: 'portfolio'},
-    {path:'settings', component: Settings,title: 'settings'},
+    {path:'settings', component: Settings,title: 'settings',children: [
+        { path: '', redirectTo: 'setting', pathMatch: 'full' },
+        {path: 'profile', component: Profile, title: 'Profile'},
+        {path: 'change', component: Changepassword, title: 'Change Password'},
+        {path:'setting', component: Setting, title: 'Setting'}
+    ]},
     {path:'**', component: Notfound, title: 'page not found'}
 ];
