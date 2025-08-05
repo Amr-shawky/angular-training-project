@@ -1,44 +1,76 @@
-<p>home works!</p>
+<div class="container my-5">
 
-<h1 [style.font-size]="'64px'" [class]="{'text-center': true , 'bg-success':true}">binding types</h1>
+  <!-- Page Title -->
+  <div class="text-center mb-5">
+    <h1 class="display-3 bg-success text-white py-3 rounded shadow">🔗 Angular Binding Types</h1>
+    <p class="lead">Understanding how Angular connects your component logic with the UI.</p>
+    <fa-icon [icon]="faCoffee" size="2x" class="text-warning mt-2"></fa-icon>
+  </div>
 
-<fa-icon [icon]="faCoffee"></fa-icon>
-<!-- ! binding types -->
+  <!-- Interpolation -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">1️⃣ Interpolation</h2>
+    <p class="mb-3">Used to display dynamic data from the component.</p>
+    <h4>Hello, I am <strong>{{name}}</strong> and my age is <strong>{{age}}</strong></h4>
+  </section>
 
-<!-- * interpolation -->
-<div class="container">
-    <div class="row">
-        <h1>hello , iam {{name}} and my age is {{age}}</h1>
-    </div>
+  <!-- Property Binding -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">2️⃣ Property Binding</h2>
+    <p class="mb-3">Used to bind element properties like image source, value, etc.</p>
+    <img [src]="imgpath" alt="Angular Image" class="img-fluid rounded shadow" style="max-width: 400px;">
+  </section>
+
+  <!-- Event Binding -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">3️⃣ Event Binding</h2>
+    <p class="mb-3">Used to handle user interactions such as clicks.</p>
+    <button (click)="print()" class="btn btn-primary px-4 py-2 fs-5">Increase Age</button>
+  </section>
+
+  <!-- Attribute Binding -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">4️⃣ Attribute Binding</h2>
+    <p class="mb-3">Used to bind custom or standard attributes.</p>
+
+    <button [attr.myattr]="age > 30" class="btn btn-danger mb-2 px-4 py-2 fs-5">
+      Age > 30
+    </button>
+
+    <button 
+      [attr.title]="'Your age is ' + age"
+      [attr.data-status]="age > 30 ? 'old' : 'young'"
+      class="btn btn-info px-4 py-2 fs-5">
+      Check Age Status
+    </button>
+  </section>
+
+  <!-- Class Binding -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">5️⃣ Class Binding</h2>
+    <p class="mb-3">Used to add/remove classes dynamically.</p>
+
+    <h4 [class.text-center]="bool">Simple Class Binding</h4>
+
+    <h4
+      [class]="{
+        'text-center': bool,
+        'text-danger': bool,
+        'text-success': !bool,
+        'bg-danger': !bool,
+        'bg-success': bool
+      }">
+      Complex Class Binding
+    </h4>
+  </section>
+
+  <!-- Style Binding -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">6️⃣ Style Binding</h2>
+    <p class="mb-3">Used to apply styles dynamically.</p>
+
+    <h4 [style.color]="'red'">This text is red</h4>
+    <h4 [style]="{'color':'white', 'background-color':'blue', 'padding':'10px'}">Styled with Object</h4>
+  </section>
+
 </div>
-
-<!-- * property type -->
-
-<img [src]="imgpath" style="width: 400px;">
-
-<!-- * event binding -->
- <button (click)="print()" class="btn btn-primary d-block p-5">++ age</button>
-
- <!-- * attribute binding -->
-
- <button [attr.myattr]="age > 30" class="btn btn-danger d-block p-5">age is greater than 30</button>
- <button 
-  [attr.title]="'Your age is ' + age"
-  [attr.data-status]="age > 30 ? 'old' : 'young'"
-  class="btn btn-info">
-  Check Status
-</button>
-
-
-<!-- * class binding -->
-<h1 [class.text-center]="bool">test header</h1>
-<h2 [class]="{'text-center':bool , 'text-danger': bool , 'text-success': !bool , 'bg-danger': !bool , 'bg-success': bool}">test header 2</h2>
-
-<!-- * style binding -->
-
-<h1 [style.color]="'red'">style binding</h1>
-
-<h1 [style]="{'color':'red' , 'background-color':'blue'}">style binding</h1>
-
-
-

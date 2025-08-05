@@ -1,21 +1,61 @@
-@for(item of names ; track $index){
-<span>{{item}}</span>
-}
-@empty {
-<p class="bg-danger">No names available.</p>
-}
+<div class="container my-5">
 
-<h2>Contact Information</h2>
-@for(item of contactsinfo ; track $index){
-    <div>
-        <span>name: {{item.myname}} - age: {{item.age}}</span>
+  <!-- Title -->
+  <div class="text-center mb-5">
+    <h1 class="display-4 text-success border-bottom pb-2">🗂️ Portfolio Page</h1>
+    <p class="lead">Displaying dynamic lists with Angular Control Flow</p>
+  </div>
+
+  <!-- Names Section -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">1️⃣ Names List</h2>
+    <p class="text-muted">Using <code>&#64;for</code> to loop through the <strong>names</strong> array.</p>
+
+    <div class="d-flex flex-wrap gap-3">
+      @for (item of names; track $index) {
+        <span class="badge bg-primary fs-6 p-2">{{ item }}</span>
+      }
+      @empty {
+        <p class="bg-danger text-white p-2 rounded">No names available.</p>
+      }
     </div>
-}
-@for(item of contactsinfo ; track $index){
-<p>{{$index}}</p>
-<p>{{$count}}</p>
-<p>{{$first}}</p>
-<p>{{$last}}</p>
-<p>{{$even}}</p>
-<p>{{$odd}}</p>
-}
+  </section>
+
+  <!-- Contact Info Section -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">2️⃣ Contact Information</h2>
+    <p class="text-muted">Looping through objects with <code>&#64;for</code>.</p>
+
+    <div class="row">
+      @for (item of contactsinfo; track $index) {
+        <div class="col-md-6 mb-3">
+          <div class="border rounded p-3 bg-white shadow-sm">
+            <h5><i class="fas fa-user me-2"></i>{{ item.myname }}</h5>
+            <p>Age: <strong>{{ item.age }}</strong></p>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Loop Metadata Section -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">3️⃣ Loop Metadata</h2>
+    <p class="text-muted">
+      Angular gives extra values like <code>$index</code>, <code>$count</code>, etc. inside <code>&#64;for</code>
+    </p>
+
+    @for (item of contactsinfo; track $index) {
+      <div class="border-bottom pb-2 mb-3">
+        <p><strong>$index:</strong> {{ $index }}</p>
+        <p><strong>$count:</strong> {{ $count }}</p>
+        <p><strong>$first:</strong> {{ $first }}</p>
+        <p><strong>$last:</strong> {{ $last }}</p>
+        <p><strong>$even:</strong> {{ $even }}</p>
+        <p><strong>$odd:</strong> {{ $odd }}</p>
+      </div>
+    }
+
+  </section>
+
+</div>

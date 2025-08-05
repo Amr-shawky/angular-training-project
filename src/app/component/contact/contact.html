@@ -1,25 +1,53 @@
-<p>contact works!</p>
-<!-- * @if(myinfo.age<30){
-  <p>Age is less than 30</p>
-}
-*@else {
-  <p>Age is 30 or more</p>
-}
+<div class="container my-5">
 
-*@switch (myinfo.age) {
- *   @case (20) {
-          <p>Age is 20</p>
+  <!-- Title -->
+  <div class="text-center mb-5">
+    <h1 class="display-4 text-info border-bottom pb-2">📞 Contact Page</h1>
+    <p class="lead">Explore Conditional Rendering and Two-Way Binding in Angular</p>
+  </div>
+
+  <!-- Conditional Logic (@if / @else) -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">1️⃣ Age Check with <code>&#64;if</code></h2>
+
+    @if (myinfo.age < 30) {
+      <p class="alert alert-success">
+        <strong>✔️ Age is less than 30</strong>
+      </p>
+    } @else {
+      <p class="alert alert-warning">
+        <strong>⚠️ Age is 30 or more</strong>
+      </p>
     }
-   * @case(30){
-          <p>Age is 30</p>
+  </section>
+
+  <!-- Switch Case Example -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">2️⃣ Age Categories with <code>&#64;switch</code></h2>
+
+    @switch (myinfo.age) {
+      @case (20) {
+        <p class="alert alert-info">👶 Age is exactly 20</p>
+      }
+      @case (30) {
+        <p class="alert alert-primary">🧑 Age is exactly 30</p>
+      }
+      @default {
+        <p class="alert alert-dark">🧓 Age is more than 30</p>
+      }
     }
-   * @default {
-                  <p>Age is more than 30</p>
-    }
-} -->
+  </section>
 
-<!-- two way data binding -->
+  <!-- Two-way Binding Example -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">3️⃣ Two-Way Data Binding</h2>
 
-<input class="form-control" [(ngModel)]="name">
+    <div class="mb-3">
+      <label for="username" class="form-label">Enter your name:</label>
+      <input id="username" class="form-control form-control-lg" [(ngModel)]="name" placeholder="Your name">
+    </div>
 
-<h1>my name is {{name}}</h1>
+    <h4 class="mt-4 text-success">👤 My name is: <strong>{{ name }}</strong></h4>
+  </section>
+
+</div>
