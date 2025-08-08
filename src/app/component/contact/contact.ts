@@ -2,9 +2,10 @@ import { Component, QueryList, ViewChildren} from '@angular/core';
 import {FormsModule} from '@angular/forms'
 import { ElementRef, ViewChild } from '@angular/core';
 import { Child } from "../../child/child";
+import { Test } from "../../test/test";
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule, Child],
+  imports: [FormsModule, Child, Test],
   templateUrl: './contact.html',
   styleUrl: './contact.css'
 })
@@ -18,8 +19,9 @@ export class Contact {
   name:string="amr";
   @ViewChildren('nameDisplay') nameDisplay!:  QueryList<ElementRef>;
   @ViewChild('paragraph')paragraphele!:ElementRef;
+  @ViewChild(Test) testcomponent!: Test;
 
-printTemplateRefVar(templateRefVar:HTMLParagraphElement) {
+printTemplateRefVar(templateRefVar: HTMLParagraphElement) {
   console.log(templateRefVar.textContent);
 }
   printParagraph() {
@@ -31,6 +33,9 @@ printTemplateRefVar(templateRefVar:HTMLParagraphElement) {
     });
   }
 
+  callTestFunction() {
+    this.testcomponent.testfunc();
+  }
 }
 
 
