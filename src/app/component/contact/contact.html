@@ -49,5 +49,47 @@
 
     <h4 class="mt-4 text-success">👤 My name is: <strong>{{ name }}</strong></h4>
   </section>
+  
+  <!-- Template Reference Variable -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">4️⃣ Template Reference Variable</h2>
+    <div class="mb-3">
+      <p #templateRefVar class="form-control bg-body-secondary p-3">📌 I have a template reference variable</p>
+    </div>
+    <button (click)="printTemplateRefVar(templateRefVar)" class="btn btn-outline-primary">Print Template Ref Variable</button>
+  </section>
 
-</div>
+  <!-- ViewChild -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">5️⃣ ViewChild Example</h2>
+    <div class="mb-3">
+      <p #paragraph class="form-control bg-body-secondary p-3">📄 This is a paragraph with a ViewChild reference</p>
+    </div>
+    <button (click)="printParagraph()" class="btn btn-outline-success">Print Paragraph</button>
+  </section>
+
+  <!-- ViewChildren -->
+  <section class="mb-5 p-4 bg-light rounded shadow">
+    <h2 class="mb-3 text-primary">6️⃣ ViewChildren Example</h2>
+    
+    <div class="mb-3">
+      <label class="form-label">Enter your name to update all fields:</label>
+      <input #nameInput class="form-control form-control-lg" placeholder="Your name">
+    </div>
+    <button (click)="handleName(nameInput)" class="btn btn-outline-info mb-4">Update All Names</button>
+
+    <div class="row g-3">
+      <div class="col-md-3">
+        <p #nameDisplay class="bg-light p-3 rounded border">Your Name</p>
+      </div>
+      <div class="col-md-3">
+        <p #nameDisplay class="bg-light p-3 rounded border">Your Name</p>
+      </div>
+      <div class="col-md-3">
+        <p #nameDisplay class="bg-light p-3 rounded border">Your Name</p>
+      </div>
+      <div class="col-md-3">
+        <p #nameDisplay class="bg-light p-3 rounded border">Your Name</p>
+      </div>
+    </div>
+  </section>
