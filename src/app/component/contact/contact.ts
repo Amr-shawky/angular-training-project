@@ -1,9 +1,10 @@
 import { Component, QueryList, ViewChildren} from '@angular/core';
 import {FormsModule} from '@angular/forms'
 import { ElementRef, ViewChild } from '@angular/core';
+import { Child } from "../../child/child";
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule],
+  imports: [FormsModule, Child],
   templateUrl: './contact.html',
   styleUrl: './contact.css'
 })

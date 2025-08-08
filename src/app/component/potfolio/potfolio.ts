@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Child } from "../../child/child";
 
 @Component({
   selector: 'app-potfolio',
-  imports: [],
+  imports: [Child],
   templateUrl: './potfolio.html',
   styleUrl: './potfolio.css'
 })

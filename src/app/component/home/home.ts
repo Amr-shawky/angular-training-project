@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { Child } from "../../child/child";
 @Component({
   selector: 'app-home',
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, Child],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
